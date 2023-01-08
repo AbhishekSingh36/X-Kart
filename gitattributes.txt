@@ -70,3 +70,9 @@ tests/integration/user.test.js merge=copy-merge
 tests/integration/auth.test.js merge=copy-merge
 tests/integration/cart.test.js merge=copy-merge
 
+# tests/unit/
+tests/unit/auth.unit.test.js merge=copy-merge
+tests/unit/cart.unit.test.js merge=copy-merge
+tests/unit/product.unit.test.js merge=copy-merge
+tests/unit/token.unit.test.js merge=copy-merge
+tests/unit/user.unit.test.js merge=copy-merge
