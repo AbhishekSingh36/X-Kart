@@ -64,3 +64,9 @@ tests/fixtures/user.fixture.js merge=copy-merge
 tests/fixtures/token.fixture.js merge=copy-merge
 tests/fixtures/product.fixture.js merge=copy-merge
 
+# tests/integration/
+tests/integration/product.test.js merge=copy-merge
+tests/integration/user.test.js merge=copy-merge
+tests/integration/auth.test.js merge=copy-merge
+tests/integration/cart.test.js merge=copy-merge
+
