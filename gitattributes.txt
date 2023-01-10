@@ -58,3 +58,9 @@ src/validations/product.validation.js merge=copy-merge
 # tests/config/
 tests/config/config.js merge=copy-merge
 
+# tests/fixtures/
+tests/fixtures/cart.fixture.js merge=copy-merge
+tests/fixtures/user.fixture.js merge=copy-merge
+tests/fixtures/token.fixture.js merge=copy-merge
+tests/fixtures/product.fixture.js merge=copy-merge
+
