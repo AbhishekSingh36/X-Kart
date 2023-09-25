@@ -50,6 +50,12 @@ const getUserByEmail = async (email) => {
  * 200 status code on duplicate email - https://stackoverflow.com/a/53144807
  */
 
-
+const newUser = async (userBody) => {
+    if(await User.isEmailTaken(userBody.email)){
+        throw new ApiError(httpStatus.OK, "Email already taken")
+    }
+    const user = await User.create(userBody)
+    return user
+}
 
 
