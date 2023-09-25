@@ -35,14 +35,13 @@ const userSchema = mongoose.Schema(
       },
     },
     walletMoney: {
-      type: number,
+      type: Number,
       required:true,
-      default: config.default_wallet_money
+      default: config.default_wallet_money,
     },
     address: {
       type: String,
       required: false,
-      trim: false,
       default: config.default_address,
     },
   },
@@ -59,6 +58,8 @@ const userSchema = mongoose.Schema(
  * @returns {Promise<boolean>}
  */
 userSchema.statics.isEmailTaken = async function (email) {
+  const user = await this.findOne({email});
+  return !!user;
 };
 
 
