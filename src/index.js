@@ -14,3 +14,6 @@ mongoose
         console.log("DB not connected Error:", e)
     })
 
+    app.listen(config.port, () => {
+        console.log(`Backend is running at ${config.port}`)
+    })
