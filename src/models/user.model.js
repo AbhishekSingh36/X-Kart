@@ -18,7 +18,12 @@ const userSchema = mongoose.Schema(
       trim: true,
       unique: true,
       lowercase: true,
-      validate: (newEmail) => validator.isEmail(newEmail),
+      validate(value) {
+        if(!validator.isEmail(value)){
+          throw new Error('Invalid email')
+        }
+      }
+      // validate: (newEmail) => validator.isEmail(newEmail),
       // check this function again
     },
     password: {
@@ -57,12 +62,17 @@ const userSchema = mongoose.Schema(
  * @param {string} email - The user's email
  * @returns {Promise<boolean>}
  */
+// this in statics is directing to document
 userSchema.statics.isEmailTaken = async function (email) {
   const user = await this.findOne({email});
   return !!user;
 };
 
-
+// this in statics is directing to collection
+userSchema.methods.isPasswordMatch = async function (password){
+  const user = this;
+  return bcrypt.compare(password, user.password)
+}
 
 // TODO: CRIO_TASK_MODULE_UNDERSTANDING_BASICS
 /*
