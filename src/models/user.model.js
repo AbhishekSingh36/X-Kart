@@ -62,13 +62,13 @@ const userSchema = mongoose.Schema(
  * @param {string} email - The user's email
  * @returns {Promise<boolean>}
  */
-// this in statics is directing to document
+// this in statics is directing to collection
 userSchema.statics.isEmailTaken = async function (email) {
   const user = await this.findOne({email});
   return !!user;
 };
 
-// this in statics is directing to collection
+// this in statics is directing to document
 userSchema.methods.isPasswordMatch = async function (password){
   const user = this;
   return bcrypt.compare(password, user.password)
